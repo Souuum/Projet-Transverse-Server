@@ -11,7 +11,7 @@ npm intsall nodemon -g
 
 ```js
 /* add in /config/connection.js */
-db = "followmeal";
+db = "projet-transverse-db";
 user = "root";
 pw = "root";
 host = "localhost";
