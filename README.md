@@ -1,2 +1,20 @@
 # Projet-Transverse-Server
-Server for our school project at EFREI
+Backend Server for our school project at EFREI
+
+# Install dependencies
+``` 
+npm install
+npm intsall nodemon -g
+```
+
+# Setup Database
+
+```js
+*/ add in /config/connection.js */
+db = "followmeal";
+user = "root";
+pw = "root";
+host = "localhost";
+
+module.exports = {db, user, pw, host}
+```
