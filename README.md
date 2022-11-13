@@ -10,11 +10,16 @@ npm intsall nodemon -g
 # Setup Database
 
 ```js
-*/ add in /config/connection.js */
+/* add in /config/connection.js */
 db = "followmeal";
 user = "root";
 pw = "root";
 host = "localhost";
 
 module.exports = {db, user, pw, host}
+```
+
+# Start server
+```
+nodemon index.js
 ```
