@@ -104,16 +104,11 @@ router.post("/signup", async (req, res) => {
             });
         } else {
             console.log("Creating our user");
-
+            var name = params.name;
+            var firstname = params.firstname;
             var email = params.email.toLowerCase();
             var pw = params.password;
-            var username = params.username.toLowerCase();
-            var bmi = (params.weight / (params.height * 10 ** -2) ** 2).toFixed(
-                1
-            );
-            var budgRatio = params.budgRatio / 10;
-            var nutrRatio = params.nutrRatio / 10;
-
+            var schoolyear = params.schoolyear;
             const hashed = crypto
                 .createHash("sha256")
                 .update(email + ":" + pw)

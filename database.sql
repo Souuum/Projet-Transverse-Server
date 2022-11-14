@@ -1,7 +1,9 @@
+DROP SCHEMA `projet-transverse-db`; 
 CREATE DATABASE `projet-transverse-db` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `projet-transverse-db`;
 CREATE TABLE `questions` (
   `id_question` int(11) NOT NULL AUTO_INCREMENT,
-  `category` int(11) NOT NULL,
+  `category` varchar(45) NOT NULL,
   `description` tinytext DEFAULT NULL,
   `poids` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id_question`)

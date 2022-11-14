@@ -7,7 +7,9 @@ const sequelize = require('./config/database');
 const bodyParser = require('body-parser');
 
 //Routes
-var questions = require("./routes/questions");
+var questions = require('./routes/questions');
+var users = require('./routes/users');
+var users_questions_history = require('./routes/users_questions_history');
 
 
 //Middleware
@@ -21,6 +23,8 @@ sequelize.authenticate()
 
 
 app.use("/questions", questions);
+app.use("/users", users);
+app.use("/users_questions_history", users_questions_history);
 
 app.get("/", (req, res) => {
     res.send("Project Transverse Server");
