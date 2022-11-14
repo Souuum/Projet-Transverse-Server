@@ -120,17 +120,12 @@ router.post("/signup", async (req, res) => {
                 .digest("hex");
 
             Users.create({
+                name: username,
+                firstname: firstname,
                 email: email,
-                username: username,
                 password: hashed,
-                age: params.age,
-                height: params.height,
-                weight: params.weight,
-                sports_per_week: params.sportsPerWeek,
-                price_per_meal: params.pricePerMeal,
-                bmi: bmi,
-                budg_ratio: budgRatio,
-                nutr_ratio: nutrRatio,
+                schoolyear: schoolyear
+
             })
                 .then((response) => {
                     if (response === null || response.length == 0) {
