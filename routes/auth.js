@@ -94,6 +94,7 @@ router.post("/login", (req, res) => {
 
 router.post("/signup", async (req, res) => {
     const params = req.body;
+    console.log(params);
     try {
         var email = params.email.toLowerCase();
         if (email && (await checkUser({ email: email }))) {
@@ -115,7 +116,7 @@ router.post("/signup", async (req, res) => {
                 .digest("hex");
 
             Users.create({
-                name: username,
+                name: name,
                 firstname: firstname,
                 email: email,
                 password: hashed,

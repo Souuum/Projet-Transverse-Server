@@ -29,7 +29,7 @@ router.get('/questions/:id', (req, res) => {
     const id = router.params.id;
 
     db.query(
-        "SELECT * FROM users_questions_history " + `WHERE id_questions = ${id}`,
+        "SELECT * FROM users_questions_history " + `WHERE id = ${id}`,
         { Types: QueryTypes.SELECT }
     ).then((response) => res.send(response)).catch((err) => console.log(err));
 });

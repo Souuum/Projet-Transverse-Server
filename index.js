@@ -7,6 +7,7 @@ const sequelize = require('./config/database');
 const bodyParser = require('body-parser');
 
 //Routes
+var auth = require('./routes/auth');
 var questions = require('./routes/questions');
 var users = require('./routes/users');
 var users_questions_history = require('./routes/users_questions_history');
@@ -21,7 +22,7 @@ sequelize.authenticate()
     .then(() => console.log("Database connected..."))
     .catch((err) => console.log("ERROR : " + err));
 
-
+app.use("/auth", auth);
 app.use("/questions", questions);
 app.use("/users", users);
 app.use("/users_questions_history", users_questions_history);
