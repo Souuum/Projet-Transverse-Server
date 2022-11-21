@@ -22,4 +22,4 @@ router.get('/id/:id', (req, res) => {
     ).then((response) => res.send(response)).catch((err) => console.log(err));
 });
 
-module.export = router;
+module.exports = router;
