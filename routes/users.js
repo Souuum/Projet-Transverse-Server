@@ -22,4 +22,15 @@ router.get('/id/:id', (req, res) => {
     ).then((response) => res.send(response)).catch((err) => console.log(err));
 });
 
+router.get('/:id/results', (req, res) => {
+    const id = req.params.id;
+
+    db.query(
+        "SELECT id_user,category, COALESCE(SUM(score),0) FROM users_questions_history" +
+        " LEFT JOIN questions on users_questions_history.id_question = questions.id " + `WHERE id_user = ${id} `
+        + "GROUP BY id_user,category;",
+        { Types: QueryTypes.SELECT }
+    ).then((response) => res.send(response)).catch((err) => console.log(err));
+});
+
 module.exports = router;

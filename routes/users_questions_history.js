@@ -61,10 +61,28 @@ router.get('/user/:id/not-answered/', (req, res) => {
 //insert new row
 
 router.post('/addrecord', (req, res) => {
-    const params = req.body;
-    console.log(params);
+    try {
+        const params = req.body;
+        console.log(params);
 
+        var id_user = params.iduser;
+        var id_question = params.idcard;
+        var score = params.score;
 
-})
+        Users_Questions_History.create({
+            id_user: id_user,
+            id_question: id_question,
+            score: score
+        }).then((response) => {
+            console.log("Done");
+        });
+    } catch (e) {
+        console.warn(e);
+        res.status(400).json({
+            response: false,
+            message: "An error occured",
+        });
+    }
+});
 
 module.exports = router;
