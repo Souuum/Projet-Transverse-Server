@@ -1,6 +1,8 @@
 # Projet-Transverse-Server
 Backend Server for our school project at EFREI
 
+see: https://github.com/Souuum/Projet-Transverse
+
 # Install dependencies
 ``` 
 npm install
