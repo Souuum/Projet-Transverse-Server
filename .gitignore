@@ -13,5 +13,7 @@ benchmarks/graphs
 
 connection.js
 
+Question_projet.txt
+
 # ignore additional files using core.excludesFile
 # https://git-scm.com/docs/gitignore

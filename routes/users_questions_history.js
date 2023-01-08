@@ -74,6 +74,7 @@ router.post('/addrecord', (req, res) => {
             id_question: id_question,
             score: score
         }).then((response) => {
+            res.status(200).json({ response: true });
             console.log("Done");
         });
     } catch (e) {
